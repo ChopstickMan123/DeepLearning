@@ -82,6 +82,7 @@ def main():
 
     ## 完了之后启动 tensorboard
     # tensorboard --logdir=runs
+    # 注意要进入到项目目录下，runs是对应的输出目录 SummaryWriter('runs/fashion_mnist_experiment_1')
 
 
 if __name__ == "__main__":
