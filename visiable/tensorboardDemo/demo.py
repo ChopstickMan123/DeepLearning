@@ -12,6 +12,7 @@ import torch.optim as optim
 from model import Net
 
 from tensorboard import version
+
 print(version.VERSION)
 from torch.utils.tensorboard import SummaryWriter
 
@@ -39,13 +40,13 @@ def main():
         [transforms.ToTensor(),
          transforms.Normalize((0.5,), (0.5,))])
 
-    # datasets
-    trainset = torchvision.datasets.FashionMNIST('./data',
-                                                 download=True,
+    # datasets 统一一下目录 ../../../../Data   ~/Data,~/GitCode/DeepLearning/visiable/tensorboardDemo
+    trainset = torchvision.datasets.FashionMNIST('../../../../Data',
+                                                 download=False,
                                                  train=True,
                                                  transform=transform)
-    testset = torchvision.datasets.FashionMNIST('./data',
-                                                download=True,
+    testset = torchvision.datasets.FashionMNIST('../../../../Data',
+                                                download=False,
                                                 train=False,
                                                 transform=transform)
 
